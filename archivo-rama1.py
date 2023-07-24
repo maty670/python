@@ -1,1 +1,0 @@
-print("Rama2")
