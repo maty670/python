@@ -1,3 +1,3 @@
 print("qweqweqwe")
 
-print("Codigo desarrollado en la Rama1")
+print("Codigo desarrollado en la rama1")
