@@ -12,7 +12,7 @@ print(f"Agregando un elemento al final de la lista: {lista}\n")
 
 
  # Agregar elemento en una posicion especifica
-lista.insert(2,"elemento-posicionado")                             
+lista.insert(2,"elemento-posicionado")
 print(f"Agregando un elemento en una posicion especifica: {lista}\n")
 
 
@@ -25,3 +25,35 @@ print(f"Agrega una lista al final de la primer lista: {lista}\n")
 posicion = 4
 elemento_eliminado = lista.pop(posicion)
 print(f"Eliminando el elemento '{elemento_eliminado}' de la posicion {posicion}: {lista}\n")
+
+# Remover un elemento por su valor
+valor = 50
+elemento_removido = lista.remove(valor)
+print(f"Removiendo valor {elemento_removido}: {lista}\n")
+
+
+
+# Ordenar una lista
+car = ['Ford', 'BMW', 'Volvo']
+car.sort()
+print(f"Lista ordenada alfabeticamente: {car}\n")
+
+
+
+# Ordenar una lista por una key
+cars = [
+  {'car': 'Ford', 'year': 2005},
+  {'car': 'Mitsubishi', 'year': 2000},
+  {'car': 'BMW', 'year': 2019},
+  {'car': 'VW', 'year': 2011}
+]
+
+def getCar(e):
+  return e['car']
+
+def getAño(e):
+  return e['year']
+
+cars.sort(key=getCar)
+
+print(f"Listado ordenado a partir de una key: {cars}\n")
