@@ -1,2 +1,6 @@
 # Para configurar el proxy, se encuentra en el script "wpad.dat"
 git config --global http.proxy 10.10.254.218:3128
+
+
+git config --global user.email "matiasesposito.10@hotmail.com"
+git config --global user.name "maty670"
