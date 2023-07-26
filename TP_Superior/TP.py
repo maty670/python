@@ -21,16 +21,15 @@ def parseCk(f):
     return complex(Ck)
     
 
+Radios=[]
+Ck=[]
 
 for x in lines:
-    Radio = parseRad(x)
-    Ck = parseCk(x)
-    print(f"{type(Radio)} {Radio}       {type(Ck)} {Ck}")
+    Radios.append(parseRad(x))
+    Ck.append(parseCk(x))
 
+print(Radios)
+
+#plt.plot(Radios, label = "line 1")
     
-
-    
-
-#https://www.youtube.com/watch?v=0J31ACZ6jtk&ab_channel=SistemasInteligentes
-
- 
+#plt.show()
