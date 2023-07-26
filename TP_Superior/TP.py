@@ -28,8 +28,11 @@ for x in lines:
     Radios.append(parseRad(x))
     Ck.append(parseCk(x))
 
-print(Radios)
+print(Ck)
 
 #plt.plot(Radios, label = "line 1")
     
 #plt.show()
+
+
+#https://bestiariotopologico.blogspot.com/2020/05/interpolacion-trigonometrica-usando-la.html
