@@ -23,10 +23,13 @@ def parseCk(f):
 
 Radios=[]
 Ck=[]
-
+y=0
 for x in lines:
-    Radios.append(parseRad(x))
-    Ck.append(parseCk(x))
+    if(y<=100):
+        Radios.append(parseRad(x))
+        Ck.append(parseCk(x))
+        y=y+1
+    
 
 print(Ck)
 
