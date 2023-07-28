@@ -1,34 +1,35 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
-# Listado de radios R (longitudes de los epiciclos)
-radios = [1.5, 2.0, 0.8]
+# Función para calcular las coordenadas polares del epiciclo
+def calculate_epicycle_coords(radius_epicycle, frequency_epicycle, angle):
+    return radius_epicycle * np.cos(frequency_epicycle * angle), radius_epicycle * np.sin(frequency_epicycle * angle)
 
-# Listado de constantes complejas Ck
-constantes_cplx = [1 + 0.5j,   # C1
-                   0.7 - 0.3j,  # C2
-                   0.4 + 0.9j]  # C3
+# Función para calcular las coordenadas polares de la deferente
+def calculate_deferent_coords(radius_deferent, frequency_deferent, angle):
+    return radius_deferent * np.cos(frequency_deferent * angle), radius_deferent * np.sin(frequency_deferent * angle)
 
-# Frecuencia angular ω0
-frecuencia_omega = 2 * np.pi
+# Parámetros del modelo para Marte (valores hipotéticos)
+radius_deferent_mars = 5  # Radio de la deferente para Marte
+frequency_deferent_mars = 0.2  # Frecuencia de movimiento de la deferente para Marte (hipotético)
+radius_epicycle_mars = 2  # Radio del epiciclo para Marte
+frequency_epicycle_mars = 1.5  # Frecuencia de movimiento del epiciclo para Marte (hipotético)
 
-# Número de puntos en el tiempo para el gráfico
-num_puntos_tiempo = 1000
+# Ángulos de 0 a 2π para trazar el movimiento completo
+angles = np.linspace(0, 2*np.pi, 1000)
 
-# Calcula las coordenadas x e y en función del tiempo t
-t = np.linspace(0, 2 * np.pi, num_puntos_tiempo)
-x = np.zeros(num_puntos_tiempo)
-y = np.zeros(num_puntos_tiempo)
+# Calcular las coordenadas polares del epiciclo y la deferente para Marte
+epicycle_x, epicycle_y = calculate_epicycle_coords(radius_epicycle_mars, frequency_epicycle_mars, angles)
+deferent_x, deferent_y = calculate_deferent_coords(radius_deferent_mars, frequency_deferent_mars, angles)
 
-for k, R, C in zip(range(len(radios)), radios, constantes_cplx):
-    x += np.real(C) * np.cos(k * frecuencia_omega * t)
-    y += np.real(C) * np.sin(k * frecuencia_omega * t)
-
-# Grafica los epiciclos
-plt.figure(figsize=(8, 6))
-plt.plot(x, y)
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Gráfico de los epiciclos')
-plt.grid()
+# Graficar el modelo de Ptolomeo para Marte
+plt.figure(figsize=(8, 8))
+plt.plot(deferent_x, deferent_y, label='Deferente')
+plt.plot(epicycle_x + deferent_x, epicycle_y + deferent_y, label='Epiciclo')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Modelo de Ptolomeo - Marte')
+plt.legend()
+plt.axis('equal')
+plt.grid(True)
 plt.show()
