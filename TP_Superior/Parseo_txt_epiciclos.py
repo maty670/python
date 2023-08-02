@@ -31,7 +31,7 @@ for x in lines:
         y=y+1
     
 
-print(Ck)
+print(Radios)
 
 #plt.plot(Radios, label = "line 1")
     
