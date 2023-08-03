@@ -16,5 +16,5 @@ print(f"Valor de la clave 'nombre': {diccionario.get('nombre')}")
 elemento_eliminado = diccionario.pop("Edad")
 print(f"Se elimino un elemento '{elemento_eliminado}' ---> {diccionario}")
 
-# Para iterar el dict
+# Para iterar el diccionario
 print(diccionario.items())
