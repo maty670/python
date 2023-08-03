@@ -7,7 +7,7 @@
 
 if __name__ == "__main__":
     # Leer los puntos desde el archivo
-    with open("C:/Users/NELIA/Desktop/Matias/python/TP_Superior/epiciclos.txt", "r") as file:
+    with open("D:/Datos/Desktop/python/TP_Superior/epiciclos.txt", "r") as file:
         lines = file.readlines()[1:]    #Skipear la primer linea
 
 def parseRad(f):    
@@ -25,7 +25,7 @@ Radios=[]
 Ck=[]
 y=0
 for x in lines:
-    if(y<=100):
+    if(y<=1000):
         Radios.append(parseRad(x))
         Ck.append(parseCk(x))
         y=y+1
