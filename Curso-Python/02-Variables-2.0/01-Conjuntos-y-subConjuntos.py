@@ -8,7 +8,7 @@ dato1,dato2 = lista
 """
 Cuando usar tuplas '()' :
 Las tuplas son una excelente opción si lo que quieres es que los datos de tu colección sean de solo lectura, que nunca cambien y 
-se mantengan constantes. Tienen la capacidad de garantizar que los datos que contienen nunnca serán alterados.
+se mantengan constantes. Tienen la capacidad de garantizar que los datos que contienen nunca serán alterados.
 Las tuplas pueden utilizarse como claves en un diccionario siempre que contengan tipos inmutables (cadenas, números u otras tuplas).
 
 Cuando usar listas '[]' :

@@ -1,3 +1,7 @@
+listaVacia = list()
+tuplaVacia = tuple()
+conjuntoVacio = set()
+
 lista = ["Cadena",75,"23","Abc","Cadena"]
 tupla = ("Cadena",75,"23","Abc","Cadena")
 conjunto = {"Cadena",75,"23","Abc","Cadena"}
