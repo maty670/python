@@ -29,3 +29,22 @@ diccionario2 = dict.fromkeys(keys, "Vacio")
 # >>>{'Nombre': 'Vacio', 'Apellido': 'Vacio', frozenset({'altura', 'calle'}): 'Vacio'}
 
 
+
+
+
+
+# Iterando un diccionario
+diccionario = dict(
+    Marca = "Ford",
+    Año = 2018,
+    Kilometros = 85000
+)
+
+# Retorna Tuplas(key,value)
+for key in diccionario.items():
+    key     
+"""
+>> ('Marca', 'Ford')
+>> ('Año', 2018)
+>> ('Kilometros', 85000)
+"""
