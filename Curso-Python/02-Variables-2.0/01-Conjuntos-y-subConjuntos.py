@@ -28,7 +28,10 @@ Ademas no se pueden acceder a sus elementos por sus indices [i]
 subconjunto1 = frozenset(["aaa","bbb",111,"qweqweqwe"])             # Lista
 subconjunto2 = frozenset(("ccc","ddd",333,"zxczxczxc"))             # Tupla
 conjunto = {subconjunto1,subconjunto1,subconjunto2,1010,1010,1010,"zzz","zzz"}
+""" 
 print(conjunto)
+>> {frozenset({'zxczxczxc', 'ccc', 'ddd', 333}), 1010, 'zzz', frozenset({'qweqweqwe', 'bbb', 'aaa', 111})} 
+"""
 
 
 
@@ -36,11 +39,17 @@ print(conjunto)
 conjunto1 = {1,2,3,4,5,6,7}
 conjunto2 = {1,3,6}                     # El conjunto2 es un subconjunto del conjunto1
 conjunto3 = {1,3,5,10,15}               # El conjunto2 NO es un subconjunto del conjunto1
+"""
 print(conjunto2.issubset(conjunto1))
+>> True
+"""
 
 
 # Comprobar si dos conjuntos tienen elementos completamente distintos
 conjunto1 = {1,3,5,7,9}
 conjunto2 = {2,4,6,8,10}                # El conjunto2 tiene todos sus elementos distintos al conjunto1
 conjunto3 = {"a","b","c",1}             # El conjunto3 tiene uno de sus elementos iguales al conjunto1, isdisjoint() sera falso
+"""
 print(conjunto1.isdisjoint(conjunto2))
+>> True
+"""
