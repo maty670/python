@@ -2,11 +2,10 @@ numeros_duplicados = [2,4,6,8,10]
 list = []
 for n in numeros_duplicados:
     list.append(n*2)
-
 # list >> [4, 8, 12, 16, 20]
 
+# Otra manera mas simple de hacerlo
 list = [x*2 for x in numeros_duplicados] 
-
 # list >> [4, 8, 12, 16, 20]
 
 

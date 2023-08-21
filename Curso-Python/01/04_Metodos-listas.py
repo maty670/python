@@ -10,6 +10,9 @@ print(f"Tamaño de la lista: {len(lista)}\n")
 lista.append("elemento-final")                                     
 print(f"Agregando un elemento al final de la lista: {lista}\n")
 
+# Ver el ultimo elemento de una lista
+print(f"Ultimo elemento de la lista: {lista[-1]}\n")
+
 
  # Agregar elemento en una posicion especifica
 lista.insert(2,"elemento-posicionado")
