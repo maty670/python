@@ -12,7 +12,7 @@ with open(f"{ruta_areaTrabajo}\\Curso-Python\\03-Modulos\\03-Archivos-csv\\archi
 
 
 
-
+'''
 
 import pandas as pd
 
@@ -101,7 +101,7 @@ print(f"• Concatenando 2 DataFrame:\n{df_concatenado}\n\n\n")
 print(f"• Cantidad de filas y de columnas del DataFrame concatenado:\n{df_concatenado.shape}\n\n\n")
 
 
-
+'''
 
 
 # 06:33:00
