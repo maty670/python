@@ -1,22 +1,13 @@
-import csv
-import sys
 import os
+import sys
 
 ruta_areaTrabajo = os.getcwd()
-print(ruta_areaTrabajo)
+sys.path.append(f"{ruta_areaTrabajo}")
 
-with open(f"{ruta_areaTrabajo}\\Curso-Python\\03-Modulos\\03-Archivos-csv\\archivo.csv") as archivo:
-    reader = csv.reader(archivo)
-    for row in reader:
-        print (row)
-
-
-
-'''
 
 import pandas as pd
 
-df = pd.read_csv("archivo.csv")
+df = pd.read_csv("Curso-Python\\03-Modulos\\03-Archivos-csv\\archivo.csv")
 
 # Listar 1er fila desde la cabecera
 fila1 = df.head(1)
@@ -93,7 +84,7 @@ edad_mayor_30_menor_40 = df.loc[(df['Edad'] > 30) & (df['Edad'] < 40),['Nombre',
 print(f"• Filas con edad mayor a 30 y menor a 40 pero retornando columnas nombre y edad:\n{edad_mayor_30_menor_40}\n\n\n")
 
 # Concatenando 2 DataFrame
-df2 = pd.read_csv("archivo2.csv")
+df2 = pd.read_csv("Curso-Python\\03-Modulos\\03-Archivos-csv\\archivo2.csv")
 df_concatenado = pd.concat([df,df2])
 print(f"• Concatenando 2 DataFrame:\n{df_concatenado}\n\n\n")
 
@@ -101,8 +92,8 @@ print(f"• Concatenando 2 DataFrame:\n{df_concatenado}\n\n\n")
 print(f"• Cantidad de filas y de columnas del DataFrame concatenado:\n{df_concatenado.shape}\n\n\n")
 
 
-'''
 
 
-# 06:33:00
+
+
 # https://trinket.io/python3/b6682a1642
