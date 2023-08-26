@@ -25,6 +25,14 @@ print(f"• Ultima fila:\n{fila_ultima}\n\n\n")
 df_ordenado = df.sort_values(by=['Edad'],ascending=True)
 print(f"• DataFrame ordenado ascendente por edad:\n{df_ordenado}\n\n\n")
 
+# Listar todos los elementos de una columna
+columna_edad = df.loc[:,"Edad"]
+print(f"• Listar todos los elementos de la columna Edad:\n{columna_edad}\n\n\n")
+
+# Listar todos los elementos de una columna pero a partir de una fila especifica
+columna_edad_ = df.loc[2:,"Edad"]
+print(f"• Listar todos los elementos de una columna pero a partir de la fila 2:\n{columna_edad_}\n\n\n")
+
 # Accediento a un elemento especifico del DataFrame
 elemento_especifico = df.loc[2,'Edad']
 print(f"• Accediendo a un elemento especifico(fila 1 columna Edad):\n{elemento_especifico}\n\n\n")
@@ -93,7 +101,19 @@ print(f"• Cantidad de filas y de columnas del DataFrame concatenado:\n{df_conc
 
 
 
+# Cambiando el tipo de dato de una columna
+df_concatenado["Edad"] = df_concatenado["Edad"].astype(str) 
+
+# Eliminar filas duplicadas
+df_concatenado = df_concatenado.drop_duplicates()
+print(f"• Eliminando filas con valores repetidos:\n{df_concatenado}\n\n\n")
+
+
+# Guardando el df_concatenado en un archivo nuevo
+df_concatenado.to_csv("Curso-Python\\03-Modulos\\03-Archivos-csv\\archivo_concatenado.csv",index = False)
 
 
 
-# https://trinket.io/python3/b6682a1642
+
+
+###### https://trinket.io/python3/b6682a1642

@@ -1,0 +1,17 @@
+• Los datos son:
+
+Nombre: Juan
+Edad: 22
+
+Nombre: Camila
+Edad: 36
+
+Nombre: Pedro
+Edad: 19
+
+Nombre: Lucas
+Edad: 33
+
+Nombre: Roberto
+Edad: 50
+
