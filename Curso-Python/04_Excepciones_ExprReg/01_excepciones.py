@@ -21,6 +21,3 @@ def dividir_dos():
 
 
 print(dividir_dos())
-
-
-# 07:23:40
