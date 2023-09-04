@@ -8,7 +8,6 @@ correos = ["qweqw@sdas.com","/asd@sdas.com","qweqw@sdas@.com","aadsz--@.co"]
 
 for c in correos:
     x,arrobas = validarCorreo(c)
-    print(arrobas)
     if x:
         print(f"El correo {c} es válido")
     else:

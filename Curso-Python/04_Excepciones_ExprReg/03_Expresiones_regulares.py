@@ -65,6 +65,9 @@ findall__ = re.findall(r"\.",texto)
 # Buscando una cadena que busque un numero, seguido de un punto
 resultado = re.findall(r"\d\.",texto)
 
+# Buscar una expresion que tiene una letra desde la a-zA-Z0-9 seguido de un simbolo -,
+resultado = re.findall(r"[a-zA-Z0-9][-,]",texto)
+
 # ^ -> Buscar en la parte inicial de un string
 principio = re.findall(r"^¡",texto)
 
@@ -77,5 +80,54 @@ final = re.findall(r"programación!$",texto)
 # $ -> Buscar en la parte final de cada linea de un string
 final_multilinea = re.findall(r"os.$",texto,flags=re.M)
 
+# | -> Buscar la expresion a la derecha o a la izquierda
+resultado_o = re.findall(r"[-_+/*]\d|\d[-_+/*]",texto,flags=re.M)     # Buscar expresiones que sean simbolos -_+/* seguidos de un numero O un numero seguido de -_+/*
 
-#07:43:50
+
+
+
+
+
+################################## GRUPOS ##################################
+
+# + -> Busca que ocurra como MINIMO una vez el elemento de la izquierda
+resultado = re.findall(r"\d+\s",texto)   # Buscar como minimo 1 digito/s seguidos de un espacio, tabulacion o salto de linea(\n)
+
+# {n} -> Busca n cantidad de veces el valor de la izquierda
+resultado_n = re.findall(r"\d{3}-",texto)   # Buscar 3 digitos seguidos de el caracter -
+
+# {n,m} -> Busca como minimo n y como maximo m cantidad de veces el valor de la izquierda
+resultado_nm = re.findall(r"\d{1,3}-",texto) # Buscar de 1 a 3 digitos seguidos de el caracter -
+
+
+
+
+
+
+
+
+
+################################## Ejemplo de como validar que un correo electronico ##################################
+
+
+
+# • Comience con un caracter a-zA-Z
+# • Luego puede tener cualquier caracter a-zA-Z0-9 junto con los simbolos -_/ al menos 1 vez
+# • Despues tener SOLO 1 arroba
+# • Siguiendo con al menos un caracter tipo a-zA-Z
+# • Luego debe tener un solo punto
+# • Y FINALIZAR ($) con el termino com
+
+def validarCorreo(correo):
+    x = re.search("^[a-zA-Z]{1}[a-zA-Z0-9-_]+@{1}[a-zA-Z]+.{1}com$", correo)
+    return x,correo.count("@")
+
+
+correos = ["qwe_qw@sdas.com","/asd@sdas.com","qweqw@sdas@.com","aa_dsz--@qwe.com"]
+
+for c in correos:
+    x,arrobas = validarCorreo(c)
+    #if x:
+        # print(f"El correo {c} es válido")
+    #else:
+        # print(f"El correo {c} tiene un formato incorrecto")
