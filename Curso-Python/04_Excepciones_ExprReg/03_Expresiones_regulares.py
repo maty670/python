@@ -99,6 +99,8 @@ resultado_n = re.findall(r"\d{3}-",texto)   # Buscar 3 digitos seguidos de el ca
 # {n,m} -> Busca como minimo n y como maximo m cantidad de veces el valor de la izquierda
 resultado_nm = re.findall(r"\d{1,3}-",texto) # Buscar de 1 a 3 digitos seguidos de el caracter -
 
+resultado_nm = re.findall(r"\d{1,}-",texto) # Buscar de 1 a infinitos digitos seguidos de el caracter -
+
 
 
 
@@ -114,12 +116,12 @@ resultado_nm = re.findall(r"\d{1,3}-",texto) # Buscar de 1 a 3 digitos seguidos 
 # • Comience con un caracter a-zA-Z
 # • Luego puede tener cualquier caracter a-zA-Z0-9 junto con los simbolos -_/ al menos 1 vez
 # • Despues tener SOLO 1 arroba
-# • Siguiendo con al menos un caracter tipo a-zA-Z
-# • Luego debe tener un solo punto
+# • Siguiendo con AL MENOS TRES caracteres a-zA-Z sin limite de maximo
+# • Luego debe tener un solo punto (con el \ como caracter de escape para buscar el punto)
 # • Y FINALIZAR ($) con el termino com
 
 def validarCorreo(correo):
-    x = re.search("^[a-zA-Z]{1}[a-zA-Z0-9-_]+@{1}[a-zA-Z]+.{1}com$", correo)
+    x = re.search("^[a-zA-Z][a-zA-Z0-9-_]+@[a-zA-Z]{3,}\.com$", correo)
     return x,correo.count("@")
 
 
@@ -128,6 +130,41 @@ correos = ["qwe_qw@sdas.com","/asd@sdas.com","qweqw@sdas@.com","aa_dsz--@qwe.com
 for c in correos:
     x,arrobas = validarCorreo(c)
     #if x:
-        # print(f"El correo {c} es válido")
+        #print(f"El correo {c} es válido")
     #else:
-        # print(f"El correo {c} tiene un formato incorrecto")
+        #print(f"El correo {c} tiene un formato incorrecto")
+
+
+
+
+
+
+
+
+
+
+
+
+
+################################################# Ejemplo buscar y reemplazar patron de fechas #################################################
+
+texto2 = """Las fechas de los próximos eventos son las siguientes: 05-09-2023, 20/12/2023, 07-09-2023 y 01/01/2024.
+
+Aquí hay algunas fechas históricas importantes: 04-07-1776 (Declaración de Independencia de EE. UU.), 14-07-1789 (Revolución Francesa).
+
+Además, en nuestros registros, encontramos estas fechas: 11-30-2021, 03/15/2022, 25-10-2023 y 02/01/2024."""
+
+# Definir la expresión regular para buscar fechas en el formato dd-mm-aaaa
+patron = r'(\d{2})-(\d{2})-(\d{4})'
+
+# Función de reemplazo que cambia '-' por '/'
+def reemplazar_fecha(match):
+    fecha = match.group()           # Para acceder a las subcadenas que coinciden con esos grupos
+    fecha = fecha.split("-") 
+    return fecha[0] + '/' + fecha[1] + '/' + fecha[2]
+
+# Realizar la sustitución utilizando la expresión regular y la función de reemplazo
+texto_modificado = re.sub(patron, reemplazar_fecha, texto2)
+
+# Imprimir el resultado
+#print(texto_modificado)
