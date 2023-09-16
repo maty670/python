@@ -23,7 +23,6 @@ if conexion.is_connected():
 else:
     print("Error en la conexión")
 
-
 # Crea un objeto cursor para ejecutar consultas SQL
 cursor = conexion.cursor()
 
@@ -37,6 +36,10 @@ cursor.execute(consulta)
 # Recorrer los registros y mostrarlos
 for x in cursor.fetchall():
     print(x[0])
+    
+# Obtener los nombres de las columnas
+nombres_columnas = [desc[0] for desc in cursor.description]
+print(nombres_columnas)
 
 
 """
@@ -44,11 +47,11 @@ for x in cursor.fetchall():
 nuevo_registro = ("Valor1", "Valor2", "Valor3")
 consulta_insert = "INSERT INTO nombre_de_la_tabla (columna1, columna2, columna3) VALUES (%s, %s, %s)"
 cursor.execute(consulta_insert, nuevo_registro)
-"""
-
 
 # Asegúrate de hacer commit para guardar los cambios
 conexion.commit()
+"""
+
 
 
 # Cierra el cursor y la conexión cuando hayas terminado
