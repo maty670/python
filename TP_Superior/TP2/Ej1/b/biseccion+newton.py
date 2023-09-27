@@ -1,5 +1,4 @@
 import numpy as np
-import math
 import matplotlib.pyplot as plt
 
 # Funciones polinomicas en forma de tuplas
@@ -104,3 +103,88 @@ Punto16({x16},{y16})
 
 
 
+
+
+#################  Grafica del Colibri #################
+
+plt.figure(figsize=(8, 6))
+plt.xlim(-20, 20)
+plt.ylim(-20, 20)
+
+
+# Graficar los puntos hallados con Biseccion y Newwon
+plt.scatter(x1, y1, color='y', marker='o', label='P1')
+#plt.scatter(x2, y2, color='y', marker='o', label='P2')              # Punto 2 es un punto que sobra y no era necesario para calcular el colibri
+#plt.scatter(x3, y3, color='y', marker='o', label='P3')              # Punto 3 es un punto que sobra y no era necesario para calcular el colibri
+plt.scatter(x4, y4, color='y', marker='o', label='P4')
+plt.scatter(x5, y5, color='y', marker='o', label='P5')
+plt.scatter(x6, y6, color='y', marker='o', label='P6')
+plt.scatter(x7, y7, color='y', marker='o', label='P7')
+#plt.scatter(x8, y8, color='y', marker='o', label='P8')              # Punto 8 es un punto que sobra y no era necesario para calcular el colibri
+plt.scatter(x9, y9, color='y', marker='o', label='P9')
+plt.scatter(x10, y10, color='y', marker='o', label='P10')
+plt.scatter(x11, y11, color='y', marker='o', label='P11')
+plt.scatter(x12, y12, color='y', marker='o', label='P12')
+plt.scatter(x13, y13, color='y', marker='o', label='P13')
+plt.scatter(x14, y14, color='y', marker='o', label='P14')
+plt.scatter(x15, y15, color='y', marker='o', label='P15')
+plt.scatter(x16, y16, color='y', marker='o', label='P16')
+
+
+
+# Graficar Polinomio P1 primero entre el punto 1 y el punto 4, y luego entre punto 6 y el punto 7
+P1_intervalo1 = np.linspace(x1, x4, 100)
+P1_intervalo2 = np.linspace(x6, x7, 100)
+plt.plot(P1_intervalo1, f(P1,P1_intervalo1), color='g')
+plt.plot(P1_intervalo2, f(P1,P1_intervalo2), color='g')
+
+
+# Graficar Polinomio P2 primero entre el punto 14 y el punto 13, y luego entre punto 9 y el punto 7
+P2_intervalo1 = np.linspace(x14, x13, 100)
+P2_intervalo2 = np.linspace(x9, x7, 100)
+plt.plot(P2_intervalo1, f(P2,P2_intervalo1), color='r')
+plt.plot(P2_intervalo2, f(P2,P2_intervalo2), color='r')
+
+
+# Graficar Polinomio P3 entre el punto 11 y el punto 10
+P3_intervalo1 = np.linspace(x11, x10, 100)
+plt.plot(P3_intervalo1, f(P3,P3_intervalo1), color='b')
+
+
+# Graficar Polinomio P4 entre el punto 4 y el punto 5
+P4_intervalo1 = np.linspace(x4, x5, 100)
+plt.plot(P4_intervalo1, f(P4,P4_intervalo1), color='c')
+
+
+# Graficar Polinomio P5 primero entre el punto 1 y el punto 15
+P5_intervalo1 = np.linspace(x1, x15, 100)
+plt.plot(P5_intervalo1, f(P5,P5_intervalo1), color='m')
+
+
+# Graficar Polinomio P6 primero entre el punto 5 y el punto 6, y luego entre punto 9 y el punto 10
+P6_intervalo1 = np.linspace(x5, x6, 100)
+P6_intervalo2 = np.linspace(x9, x10, 100)
+plt.plot(P6_intervalo1, f(P6,P6_intervalo1), color='k')
+plt.plot(P6_intervalo2, f(P6,P6_intervalo2), color='k')
+
+
+# Graficar Polinomio P7 primero entre el punto 11 y el punto 12
+P7_intervalo1 = np.linspace(x11, x12, 100)
+plt.plot(P7_intervalo1, f(P7,P7_intervalo1), color='g')
+
+
+# Graficar Polinomio P8 primero entre el punto 13 y el punto 12
+P8_intervalo1 = np.linspace(x13, x12, 100)
+plt.plot(P8_intervalo1, f(P8,P8_intervalo1), color='y')
+
+
+# Graficar Polinomio P9 primero entre el punto 14 y el punto 15
+P9_intervalo1 = np.linspace(x14, x15, 100)
+plt.plot(P9_intervalo1, f(P9,P9_intervalo1), color='c')
+
+
+
+
+plt.title('Gráfico del Colibri')
+plt.grid(True)
+plt.show()
