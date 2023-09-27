@@ -64,7 +64,43 @@ def biseccion(a,b,max_it,tol,Pa,Pb):
 
 
 
-#biseccion(extremo_A,extremo_b,max_iteraciones,tolerancia,Pa,Pb)
-x1,y1,residuo_1,iteracionesNewton_1,iteracionesBiseccion_1 = biseccion(-8,-2,50,0.01,P4,P9)
-print(f"Punto: P1({x1},{y1}) ")
+#biseccion(extremo_A,extremo_b,max_iteraciones,tolerancia,Polinomio_a,Polinomio_b)
+
+x1,y1,residuo_1,iteracionesNewton_1,iteracionesBiseccion_1 = biseccion(-18,-14,50,0.01,P1,P5)
+x2,y2,residuo_2,iteracionesNewton_2,iteracionesBiseccion_2 = biseccion(-5,-4,50,0.01,P1,P8)
+x3,y3,residuo_3,iteracionesNewton_3,iteracionesBiseccion_3 = biseccion(-4,-3,50,0.01,P1,P9)
+x4,y4,residuo_4,iteracionesNewton_4,iteracionesBiseccion_4 = biseccion(-2,-1,50,0.01,P1,P4)
+x5,y5,residuo_5,iteracionesNewton_5,iteracionesBiseccion_5 = biseccion(-4,-3,50,0.01,P4,P6)
+x6,y6,residuo_6,iteracionesNewton_6,iteracionesBiseccion_6 = biseccion(0,1,50,0.01,P1,P6)
+x7,y7,residuo_7,iteracionesNewton_7,iteracionesBiseccion_7 = biseccion(1,3,50,0.01,P1,P2)
+x8,y8,residuo_8,iteracionesNewton_8,iteracionesBiseccion_8 = biseccion(1,3,50,0.01,P2,P5)
+x9,y9,residuo_9,iteracionesNewton_9,iteracionesBiseccion_9 = biseccion(2,3,50,0.01,P2,P6)
+x10,y10,residuo10_1,iteracionesNewton_10,iteracionesBiseccion_10 = biseccion(5,7,50,0.01,P3,P6)
+x11,y11,residuo_11,iteracionesNewton_11,iteracionesBiseccion_11 = biseccion(3,4,50,0.01,P3,P7)
+x12,y12,residuo_12,iteracionesNewton_12,iteracionesBiseccion_12 = biseccion(14,16,50,0.01,P7,P8)
+x13,y13,residuo_13,iteracionesNewton_13,iteracionesBiseccion_13 = biseccion(2,3,50,0.01,P2,P8)
+x14,y14,residuo_14,iteracionesNewton_14,iteracionesBiseccion_14 = biseccion(1,3,50,0.01,P2,P9)
+x15,y15,residuo_15,iteracionesNewton_15,iteracionesBiseccion_15 = biseccion(-3,-2,50,0.01,P5,P9)
+x16,y16,residuo_16,iteracionesNewton_16,iteracionesBiseccion_16 = biseccion(-6,-5,50,0.01,P5,P7)
+
+
+print(f"""Punto1({x1},{y1})
+Punto2({x2},{y2})
+Punto3({x3},{y3})
+Punto4({x4},{y4})
+Punto5({x5},{y5})
+Punto6({x6},{y6})
+Punto7({x7},{y7})
+Punto8({x8},{y8})
+Punto9({x9},{y9})
+Punto10({x10},{y10})
+Punto11({x11},{y11})
+Punto12({x12},{y12})
+Punto13({x13},{y13})
+Punto14({x14},{y14})
+Punto15({x15},{y15})
+Punto16({x16},{y16})
+""")
+
+
 
