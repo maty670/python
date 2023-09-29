@@ -39,7 +39,7 @@ def newton_raphson(x0, tol, max_iter,Pa,Pb):
         x = x - interseccion(Pa,Pb,x) / derivada(Pa,Pb,x)
         it += 1
 
-    return x,interseccion(Pa,Pb,x) ,it
+    return x,abs(interseccion(Pa,Pb,x)) ,it
 
 def biseccion(a,b,max_it,tol,Pa,Pb):
     it=0
@@ -74,7 +74,7 @@ x6,y6,residuo_6,iteracionesNewton_6,iteracionesBiseccion_6 = biseccion(0,1,50,0.
 x7,y7,residuo_7,iteracionesNewton_7,iteracionesBiseccion_7 = biseccion(1,3,50,0.01,P1,P2)
 x8,y8,residuo_8,iteracionesNewton_8,iteracionesBiseccion_8 = biseccion(1,3,50,0.01,P2,P5)
 x9,y9,residuo_9,iteracionesNewton_9,iteracionesBiseccion_9 = biseccion(2,3,50,0.01,P2,P6)
-x10,y10,residuo10_1,iteracionesNewton_10,iteracionesBiseccion_10 = biseccion(5,7,50,0.01,P3,P6)
+x10,y10,residuo_10,iteracionesNewton_10,iteracionesBiseccion_10 = biseccion(5,7,50,0.01,P3,P6)
 x11,y11,residuo_11,iteracionesNewton_11,iteracionesBiseccion_11 = biseccion(3,4,50,0.01,P3,P7)
 x12,y12,residuo_12,iteracionesNewton_12,iteracionesBiseccion_12 = biseccion(14,16,50,0.01,P7,P8)
 x13,y13,residuo_13,iteracionesNewton_13,iteracionesBiseccion_13 = biseccion(2,3,50,0.01,P2,P8)
@@ -101,7 +101,33 @@ Punto15({x15},{y15}) Iteraciones Biseccion({iteracionesBiseccion_15}) Iteracione
 Punto16({x16},{y16}) Iteraciones Biseccion({iteracionesBiseccion_16}) Iteraciones Newton({iteracionesNewton_16})
 """)
 
+################################## Cual es la distancia mas extensa entre los puntos encontrados ##################################
+def menorResiduo(residuos):
+    min = residuos[0]
+    punto_min=1
+    max = residuos[0]
+    punto_max=1
+    
+    for i in range(0,len(residuos)):
+        res = residuos[i]
+        punto = i+1
+        if abs(res) < abs(min) and res != 0:
+            min = res
+            punto_min = punto
+        elif abs(res) > abs(max) and res != 0:
+            max = res    
+            punto_max = punto
+    return min,max,punto_min,punto_max
+    
+lista_residuos = (residuo_1,residuo_2,residuo_3,residuo_4,residuo_5,residuo_6,residuo_7,residuo_8,residuo_9,residuo_10,
+                 residuo_11,residuo_12,residuo_13,residuo_14,residuo_15,residuo_16)
 
+min,max,punto_min,punto_max = menorResiduo(lista_residuos)
+
+print(lista_residuos)
+
+print(f"""Distancia mas extensa: {max}, en el punto P{punto_min}
+Distancia max corta: {min}, en el punto P{punto_max}""")
 
 
 
