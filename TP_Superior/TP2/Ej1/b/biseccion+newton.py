@@ -167,48 +167,48 @@ plt.scatter(x16, y16, color='y', marker='o', label='P16')
 
 
 
-# Graficar Polinomio P1 primero entre el punto 1 y el punto 4, y luego entre punto 6 y el punto 7
-P1_intervalo1 = np.linspace(float(x1), float(x4), 100)
+# Graficar Polinomio P1 primero entre el punto 1 y el punto 4
+P1_intervalo1 = np.linspace(float(x1), float(x4), 1000)
 plt.plot(P1_intervalo1, f(P1,P1_intervalo1), color='g')
 
 
-# Graficar Polinomio P2 primero entre el punto 14 y el punto 13, y luego entre punto 9 y el punto 7
-P2_intervalo1 = np.linspace(float(x14), float(x13), 100)
+# Graficar Polinomio P2 primero entre el punto 14 y el punto 13
+P2_intervalo1 = np.linspace(float(x14), float(x13), 1000)
 plt.plot(P2_intervalo1, f(P2,P2_intervalo1), color='r')
 
 
 # Graficar Polinomio P3 entre el punto 11 y el punto 10
-P3_intervalo1 = np.linspace(float(x11), float(x10), 100)
+P3_intervalo1 = np.linspace(float(x11), float(x10), 1000)
 plt.plot(P3_intervalo1, f(P3,P3_intervalo1), color='b')
 
 
 # Graficar Polinomio P4 entre el punto 4 y el punto 5
-P4_intervalo1 = np.linspace(float(x4), float(x5), 100)
+P4_intervalo1 = np.linspace(float(x4), float(x5), 1000)
 plt.plot(P4_intervalo1, f(P4,P4_intervalo1), color='c')
 
 
 # Graficar Polinomio P5 primero entre el punto 1 y el punto 15
-P5_intervalo1 = np.linspace(float(x1), float(x15), 100)
+P5_intervalo1 = np.linspace(float(x1), float(x15), 1000)
 plt.plot(P5_intervalo1, f(P5,P5_intervalo1), color='m')
 
 
 # Graficar Polinomio P6 primero entre el punto 5 y el punto 10
-P6_intervalo1 = np.linspace(float(x5), float(x10), 100)
+P6_intervalo1 = np.linspace(float(x5), float(x10), 1000)
 plt.plot(P6_intervalo1, f(P6,P6_intervalo1), color='k')
 
 
 # Graficar Polinomio P7 primero entre el punto 11 y el punto 12
-P7_intervalo1 = np.linspace(float(x11), float(x12), 100)
+P7_intervalo1 = np.linspace(float(x11), float(x12), 1000)
 plt.plot(P7_intervalo1, f(P7,P7_intervalo1), color='g')
 
 
 # Graficar Polinomio P8 primero entre el punto 13 y el punto 12
-P8_intervalo1 = np.linspace(float(x13), float(x12), 100)
+P8_intervalo1 = np.linspace(float(x13), float(x12), 1000)
 plt.plot(P8_intervalo1, f(P8,P8_intervalo1), color='y')
 
 
 # Graficar Polinomio P9 primero entre el punto 14 y el punto 15
-P9_intervalo1 = np.linspace(float(x14), float(x15), 100)
+P9_intervalo1 = np.linspace(float(x14), float(x15), 1000)
 plt.plot(P9_intervalo1, f(P9,P9_intervalo1), color='c')
 
 
