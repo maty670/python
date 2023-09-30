@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 from mpmath import mp
 
-# Configura la precisión a 30 dígitos decimales
+# Configura la precisión a 100 dígitos decimales
 mp.dps = 100
 
 
