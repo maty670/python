@@ -30,37 +30,44 @@ A = generar_matriz (n,p)
 
 
 
- 
-
-
-############################################ Factorizacion LU ############################################
-
+############################ Metodo gradientes conjugados ############################
 from  time  import*
-import scipy
-import scipy.linalg
 
 
 t1=perf_counter(); #Calcula tiempo inicio del algoritmo
-# Función LU, aquí se inserta la matriz y su tamaño
-P, L, U = scipy.linalg.lu(A)
 
 
-A = np.array(A,float)
-P = np.array(P,float)
-L = np.array(L,float)
-U = np.array(U,float)
+def grad_conj(m, b, x0, tol, maxiter):
 
-
-
-
-
-L = np.dot(P,L)
-y = np.linalg.solve(L,b)
-
-
-x = np.linalg.solve(U,y)
-
+    n = len(b)
+    if not x0:
+        x0 = np.zeros(n)
+        
+    grad0 = np.dot(m, x0) - b        
+    d = -grad0                      
+    
+    for i in range(maxiter):
+        alpha = np.dot(grad0, grad0) / np.dot(np.dot(d, m), d)
+        x0 = x0 + d * alpha
+        grad = grad0 + np.dot(m, alpha * d)
+        if np.linalg.norm(grad) < tol:
+            return x0
+        beta = np.dot(grad, grad) / np.dot(grad0, grad0)
+        d = -grad + beta * d
+        grad0 = grad
+    return x0,i
+    
+tol = 1e-5
+maxit=1000    
+    
+x,it = grad_conj(A, b, None, tol, maxit)
 t2=perf_counter(); #Calcula tiempo final del algoritmo
+
+
+
+
+
+
 
 # Errores
 Error_list=""
@@ -73,15 +80,11 @@ for i in range(len(A)):
     
     
     
-
-
+    
+    
 print(f"MATRIZ A:{A}")
 print(f"VECTOR b:{b}")
 print("El vector solucion es: \n"+str(x))
 print(Error_list)
+print(f"Iteraciones: {it}")
 print("\nEl tiempo de ejecución es: "+str(t2-t1))
-
-
-
-
-

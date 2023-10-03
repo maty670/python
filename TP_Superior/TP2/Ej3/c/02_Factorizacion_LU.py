@@ -14,7 +14,7 @@ def generar_matriz(n,p):
 
 # Dimensione de la matriz A y termino p
 n = 50
-p = 1
+p = (5**(1/2) - 1)/2
 
 # Generar vector con n terminos independientes
 b=[]
