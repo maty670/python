@@ -13,14 +13,14 @@ def generar_matriz(n,p):
     return A
 
 # Dimensione de la matriz A y termino p
-n = 50
+n = 10
 p = (5**(1/2) - 1)/2
 
 # Generar vector con n terminos independientes
 b=[]
 for i in range(0,n):
-    #numero_aleatorio = random.randint(1, 9)
-    b.append(i+1)
+    numero_aleatorio = random.randint(1, 9)
+    b.append(numero_aleatorio)
 
 A = generar_matriz (n,p)
 
@@ -45,7 +45,7 @@ def gauss_seidel(A, b, x0, K, tol=1e-15, max_iter=100):
         if all(abs(x[i] - x_prev[i]) < tol for i in range(n)):
             break
     
-    return x,k
+    return x,k+1
 
 
 
@@ -85,3 +85,6 @@ print("El vector solucion es: \n"+str(x))
 print(Error_list)
 print(f"Iteraciones: {it}")
 print("\nEl tiempo de ejecución es: "+str(t2-t1))
+
+
+

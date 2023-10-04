@@ -13,14 +13,16 @@ def generar_matriz(n,p):
     return A
 
 # Dimensione de la matriz A y termino p
-n = 50
+n = 10
 p = 1
 
 # Generar vector con n terminos independientes
 b=[]
+x0=[]
 for i in range(0,n):
-    #numero_aleatorio = random.randint(1, 9)
-    b.append(i+1)
+    numero_aleatorio = random.randint(1, 9)
+    b.append(numero_aleatorio)
+    x0.append(0)
 
 A = generar_matriz (n,p)
 
@@ -32,35 +34,35 @@ A = generar_matriz (n,p)
 
 ############################ Metodo gradientes conjugados ############################
 from  time  import*
+import scipy
+import scipy.linalg
 
 
 t1=perf_counter(); #Calcula tiempo inicio del algoritmo
 
 
-def grad_conj(m, b, x0, tol, maxiter):
+def grad_conj(A, b, x0, max_iter,tol):
+    x = x0
+    r = b - np.dot(A, x)
+    p = r
+    for k in range(max_iter):
+        Ap = np.dot(A, p)
+        alpha = np.dot(r, r) / np.dot(p, Ap)
+        x = x + alpha * p
+        r_new = r - alpha * Ap
+        if np.linalg.norm(r_new) < tol:
+            break
+        beta = np.dot(r_new, r_new) / np.dot(r, r)
+        p = r_new + beta * p
+        r = r_new
+    return x,k+1
+    
 
-    n = len(b)
-    if not x0:
-        x0 = np.zeros(n)
-        
-    grad0 = np.dot(m, x0) - b        
-    d = -grad0                      
-    
-    for i in range(maxiter):
-        alpha = np.dot(grad0, grad0) / np.dot(np.dot(d, m), d)
-        x0 = x0 + d * alpha
-        grad = grad0 + np.dot(m, alpha * d)
-        if np.linalg.norm(grad) < tol:
-            return x0
-        beta = np.dot(grad, grad) / np.dot(grad0, grad0)
-        d = -grad + beta * d
-        grad0 = grad
-    return x0,i
-    
 tol = 1e-5
 maxit=1000    
+  
     
-x,it = grad_conj(A, b, None, tol, maxit)
+x,it = grad_conj(A, b, x0, maxit, tol)
 t2=perf_counter(); #Calcula tiempo final del algoritmo
 
 
