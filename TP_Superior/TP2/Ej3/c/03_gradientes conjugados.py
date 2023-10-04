@@ -40,7 +40,6 @@ import scipy.linalg
 
 t1=perf_counter(); #Calcula tiempo inicio del algoritmo
 
-
 def grad_conj(A, b, x0, max_iter,tol):
     x = x0
     r = b - np.dot(A, x)
