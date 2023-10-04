@@ -11,7 +11,7 @@ def generar_matriz(n,p):
     return A
 
 p=1
-dimension = 50
+dimension = 10
 
 matriz = generar_matriz(dimension,p)
 
