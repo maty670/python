@@ -7,7 +7,7 @@ import sys
 ruta_areaTrabajo = os.getcwd()
 sys.path.append(f"{ruta_areaTrabajo}")
 
-df = pd.read_csv("Curso-Python\\03-Modulos\\04-Graficos\\Ventas_Diarias.csv")
+df = pd.read_csv("Curso_Python_Dalto\\03_Modulos\\04_Graficos\\Ventas_Diarias.csv")
 
 ################################################### Grafico con lineas ###################################################
 sns.lineplot(x="Fechas",y="Ventas",data=df)
@@ -44,6 +44,6 @@ plt.show()
 
 
 ################################################### Grafico de dispersion ###################################################
-df = pd.read_csv("Curso-Python\\03-Modulos\\04-Graficos\\dispersion.csv")
+df = pd.read_csv("Curso_Python_Dalto\\03_Modulos\\04_Graficos\\dispersion.csv")
 sns.scatterplot(x="tiempo",y="dinero",data=df)
 plt.show()

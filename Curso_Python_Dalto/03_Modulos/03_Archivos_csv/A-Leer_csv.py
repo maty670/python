@@ -7,7 +7,7 @@ sys.path.append(f"{ruta_areaTrabajo}")
 
 import pandas as pd
 
-df = pd.read_csv("Curso-Python\\03-Modulos\\03-Archivos-csv\\archivo.csv")
+df = pd.read_csv("Curso_Python_Dalto\\03_Modulos\\03_Archivos_csv\\archivo.csv")
 
 # Listar 1er fila desde la cabecera
 fila1 = df.head(1)
@@ -92,7 +92,7 @@ edad_mayor_30_menor_40 = df.loc[(df['Edad'] > 30) & (df['Edad'] < 40),['Nombre',
 print(f"• Filas con edad mayor a 30 y menor a 40 pero retornando columnas nombre y edad:\n{edad_mayor_30_menor_40}\n\n\n")
 
 # Concatenando 2 DataFrame
-df2 = pd.read_csv("Curso-Python\\03-Modulos\\03-Archivos-csv\\archivo2.csv")
+df2 = pd.read_csv("Curso_Python_Dalto\\03_Modulos\\03_Archivos_csv\\archivo2.csv")
 df_concatenado = pd.concat([df,df2])
 print(f"• Concatenando 2 DataFrame:\n{df_concatenado}\n\n\n")
 
@@ -110,7 +110,7 @@ print(f"• Eliminando filas con valores repetidos:\n{df_concatenado}\n\n\n")
 
 
 # Guardando el df_concatenado en un archivo nuevo
-df_concatenado.to_csv("Curso-Python\\03-Modulos\\03-Archivos-csv\\archivo_concatenado.csv",index = False)
+df_concatenado.to_csv("Curso_Python_Dalto\\03_Modulos\\03_Archivos_csv\\archivo_concatenado.csv",index = False)
 
 
 
