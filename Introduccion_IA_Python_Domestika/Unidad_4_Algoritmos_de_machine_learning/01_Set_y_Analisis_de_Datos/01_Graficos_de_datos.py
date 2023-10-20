@@ -4,7 +4,7 @@
 
 import matplotlib.pyplot as plt
 import pandas as pd
-datos = pd.read_csv("Introduccion_IA_Python_Domestika\\02_Set_y_Analisis_de_Datos\\housing.csv")
+datos = pd.read_csv("Introduccion_IA_Python_Domestika\\Unidad_4_Algoritmos_de_machine_learning\\01_Set_y_Analisis_de_Datos\\housing.csv")
 
 
 

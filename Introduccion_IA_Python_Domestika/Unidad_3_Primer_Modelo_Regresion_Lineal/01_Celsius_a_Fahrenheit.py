@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sb
 
-datos = pd.read_csv("Introduccion_IA_Python_Domestika\\01_Regresion_Lineal\\celsius.csv")
+datos = pd.read_csv("Introduccion_IA_Python_Domestika\\Unidad_3_Primer_Modelo_Regresion_Lineal\\celsius.csv")
 
 
 # 'hue' -> Parámetro que se utiliza en algunas funciones para separar los datos en subconjuntos y representarlos con diferentes colores

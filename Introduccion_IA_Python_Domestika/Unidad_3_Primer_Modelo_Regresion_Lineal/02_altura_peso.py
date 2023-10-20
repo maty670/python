@@ -3,7 +3,7 @@ import seaborn as sb
 import matplotlib.pyplot as plt
 
 # Lectura de un arhivo csv que contiene datos del Peso y Altura de 50 personas
-datos = pd.read_csv("Introduccion_IA_Python_Domestika\\01_Regresion_Lineal\\altura_peso.csv")
+datos = pd.read_csv("Introduccion_IA_Python_Domestika\\Unidad_3_Primer_Modelo_Regresion_Lineal\\altura_peso.csv")
 # Graficar los datos
 sb.scatterplot(x="Peso",y="Altura",data=datos,hue="Altura",palette="BuPu")
 plt.title('Gráfico de Pesos(x) y Alturas(y)')

@@ -3,7 +3,7 @@
 
 
 import pandas as pd
-datos = pd.read_csv("Introduccion_IA_Python_Domestika\\02_Set_y_Analisis_de_Datos\\housing.csv")
+datos = pd.read_csv("Introduccion_IA_Python_Domestika\\Unidad_4_Algoritmos_de_machine_learning\\01_Set_y_Analisis_de_Datos\\housing.csv")
 
 
 # Ver cabeceras
@@ -69,7 +69,7 @@ print("\n\n\n")
 print("DATOS SIN 'ocean_proximity' con DUMMIES:\n",datos_na.head())
 
 # Guardando el df_concatenado en un archivo nuevo
-datos_na.to_csv("Introduccion_IA_Python_Domestika\\03_Ejercicio_Regresion_Lineal\\datos_procesados.csv",index = False)
+datos_na.to_csv("Introduccion_IA_Python_Domestika\\Unidad_4_Algoritmos_de_machine_learning\\02_Ejercicio_Regresion_Lineal\\datos_procesados.csv",index = False)
 
 
 ####################################### Correlaciones #######################################

@@ -32,7 +32,7 @@ ruta_areaTrabajo = os.getcwd()
 
 # obtener la ruta especificada del archivo
 dir_archivo = __file__
-sys.path.append(f"{ruta_areaTrabajo}\\Curso-Python\\03-Modulos\\carpeta")
+sys.path.append(f"{ruta_areaTrabajo}\\Curso-Python\\03-Modulos\\01_Modulos")
 
 # Luego de cambiar la ruta actual, se puede importar el modulo
 import calcular_primos as cp
